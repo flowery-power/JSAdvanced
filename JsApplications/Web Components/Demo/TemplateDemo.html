@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Components Demo</title>
+  </head>
+  <body>
+    <template id="my-template">
+      <style>
+        h1 {
+          color: rgb(190, 10, 190);
+        }
+      </style>
+      <article>
+        <h1><slot name="title">Title</slot></h1>
+        <p><slot name="description">Description</slot></p>
+      </article>
+    </template>
+
+    <main id="content">
+      <card-element color="blue">
+        <span slot="title">Jhon</span>
+        <span slot="description">2</span>
+      </card-element>
+
+      <card-element color="red"></card-element>
+      <card-element color="green"></card-element>
+    </main>
+
+    <button id="actionBtn">Click Me</button>
+
+    <script type="module">
+      class CardElement extends HTMLElement {
+        constructor() {
+          super();
+
+          this.attachShadow({ mode: "open" });
+        }
+
+        connectedCallback() {
+          const color = this.getAttribute("color");
+
+          const content = tmp.content.cloneNode(true);
+          content.querySelector("h1").style.color = color;
+
+          this.shadowRoot.appendChild(content);
+        }
+      }
+
+      const tmp = document.getElementById("my-template");
+      const main = document.getElementById("content");
+
+      window.customElements.define("card-element", CardElement);
+
+      document.getElementById("actionBtn").addEventListener("click", () => {
+        const myElement = document.createElement("card-element");
+        main.appendChild(myElement);
+      });
+    </script>
+  </body>
+</html>

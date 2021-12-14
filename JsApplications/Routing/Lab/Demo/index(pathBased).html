@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Api Demo</title>
+</head>
+<body>
+  <h1>Welcome to History Api Demo</h1>
+  <nav>
+    <a href="/home">Home</a>
+    <a href="/catalog">Catalog</a>
+    <a href="/about">About</a>
+  </nav>
+
+  <main>
+    <h2>Home Page</h2>
+    <div>Home page content</div>
+  </main>
+
+  <script>
+    const pages = {
+      "/home" : `<h2>Home Page</h2><p>Home page content</p>`,
+      "/catalog" : `<h2>Catalog Page</h2><p>List of recent articles</p>`,
+      "/about" : `<h2>About us</h2><p>Contact information</p>`
+    }
+    const defaultPage = `<h2>404</h2><p>Page Not Found</p>`
+
+    const main = document.querySelector("main")
+
+    window.addEventListener("popstate", updateContent)
+    
+    document.body.addEventListener("click", (ev) => {
+      if(ev.target.tagName === "A"){
+        ev.preventDefault()
+        history.pushState({name: "peter"}, "", ev.target.href)
+        updateContent()
+      }
+    })
+
+    updateContent()
+
+    function updateContent(){
+      const pathname = window.location.pathname
+      main.innerHTML = pages[pathname] || defaultPage
+    }
+  </script>
+</body>
+</html>

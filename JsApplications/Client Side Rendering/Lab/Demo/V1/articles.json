@@ -1,0 +1,22 @@
+[
+  {
+    "title": "First Article",
+    "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autvoluptates ducimus perspiciatis",
+    "author": "Peter Jackson"
+  },
+  {
+    "title": "Second Article",
+    "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autvoluptates ducimus perspiciatis hic doloremque autem reiciendis, earum",
+    "author": "Peter Jhonson"
+  },
+  {
+    "title": "Third Article",
+    "content": "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    "author": "Peter Maxwell"
+  },
+  {
+    "title": "Fourth Article",
+    "content": "Lorem ipsum dolor sit amet",
+    "author": "Peter Wells"
+  }
+]

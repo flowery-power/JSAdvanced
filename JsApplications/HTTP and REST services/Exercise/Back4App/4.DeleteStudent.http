@@ -1,0 +1,4 @@
+DELETE /classes/student/BOklk1aVl4 HTTP/1.1
+Host: parseapi.back4app.com
+X-Parse-Application-Id: MbhIdZn5zkOqThikYQW3y5yecWflUhqG70245010
+X-Parse-REST-API-Key: c7vzQI9ky0FiJDfSC0fUEDzKfAXN3bUZkBdxjaxe

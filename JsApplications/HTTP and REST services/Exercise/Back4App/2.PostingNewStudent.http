@@ -1,0 +1,14 @@
+POST /classes/student/BdyTHleYsr HTTP/1.1
+Host: parseapi.back4app.com
+X-Parse-Application-Id: MbhIdZn5zkOqThikYQW3y5yecWflUhqG70245010
+X-Parse-REST-API-Key: c7vzQI9ky0FiJDfSC0fUEDzKfAXN3bUZkBdxjaxe
+Content-Type: application/json
+Content-Length: 80
+
+{
+    "firstName": "John",
+    "lastName": "Cook",
+    "averageGrade": 5.3
+}
+
+

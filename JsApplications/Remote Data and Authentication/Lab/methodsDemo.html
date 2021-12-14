@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="articleForm" method="POST" action="http://localhost:3030/jsonstore/advanced/articles/details">
+      <input type="text" name="title">
+      <textarea name="content"></textarea>
+      <input type="submit" value="Publish Articale">
+    </form>
+    <script>
+      const form = document.getElementById("articleForm")
+      form.addEventListener('submit', event => {
+        event.preventDefault()
+
+        const title = form.querySelector('[name="title"]').value
+        const content = form.querySelector('[name="content"]').value
+
+        const article = {title, content}
+        postData(article)
+      })
+
+      async function getData(){
+        const response = await fetch("http://localhost:3030/jsonstore/advanced/articles/details")
+        const data = await response.json()
+
+        console.log(data)
+      }
+
+      async function getDataById(){
+        const response = await fetch("http://localhost:3030/jsonstore/advanced/articles/details/" + id)
+        const data = await response.json()
+
+        console.log(data)
+      }
+
+      async function postData(data){
+        const response = await fetch("http://localhost:3030/jsonstore/advanced/articles/details", {
+          method: "post",
+          headers: {"Content-type": "application/json"},
+          body: JSON.stringify(data)
+        })
+        console.log(response)
+
+        const result = await response.json()
+        console.log(result)
+      }
+
+      async function updateData(id, data){
+        const response = await fetch("http://localhost:3030/jsonstore/advanced/articles/details/" + id, {
+          method: "put",
+          headers: {"Content-type": "application/json"},
+          body: JSON.stringify(data)
+        })
+      }
+
+      async function deleteData(){
+        const response = await fetch("http://localhost:3030/jsonstore/advanced/articles/details/" + id, {
+          method: "delete"
+        })
+
+        const result = await response.json()
+        console.log(result)
+      }
+
+    </script>
+  </body>
+</html>

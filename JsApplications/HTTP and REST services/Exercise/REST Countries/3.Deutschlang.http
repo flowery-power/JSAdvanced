@@ -1,0 +1,5 @@
+GET /rest/v2/lang/de HTTP/1.1
+Host: restcountries.eu
+Cookie: __cfduid=d48436b390b6a91be772a0bc3d18164761614243319
+
+

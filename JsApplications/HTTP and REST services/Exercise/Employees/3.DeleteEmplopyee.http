@@ -1,0 +1,3 @@
+DELETE /api/v1/delete/16 HTTP/1.1
+Host: dummy.restapiexample.com
+Cookie: active_template::133674=pub_site.1614245466; ezCMPCCS=false; ezepvv=0; ezoab_133674=mod51; ezoadgid_133674=-1; ezopvc_133674=1; ezoref_133674=; ezovid_133674=1982530348; ezovuuid_133674=68bdb31a-8281-45d3-7fe5-986cfebb01f8; ezovuuidtime_133674=1614245466
